@@ -1,0 +1,62 @@
+(onelastrty) tpb@panther:~/Desktop/FILA/project/wurm-medium-article-1$ python -m experiments.main --agent env=snake__num_envs=512__size=11__agent=convolutional__observation=raw__coord_conv=True__lr=0.0005__gamma=0.99__update_steps=40__entropy=0.01__total_steps=250000000.0.pt --env snake --num-envs 1 --size 11 --total-episodes 5 --save-model False --save-logs False  --render True --train False --save-location rewardShapedResults --save-video True
+env=snake__num_envs=1__size=11__agent=env=snake__num_envs=512__size=11__agent=convolutional__observation=raw__coord_conv=True__lr=0.0005__gamma=0.99__update_steps=40__entropy=0.01__total_steps=250000000.0.pt__observation=default__coord_conv=True__lr=0.001__gamma=0.99__update_steps=20__entropy=0.0__total_episodes=5.0
+Loading agent from file. Agent params:
+{'agent': 'convolutional',
+ 'coord_conv': 'True',
+ 'entropy': '0.01',
+ 'env': 'snake',
+ 'gamma': '0.99',
+ 'lr': '0.0005',
+ 'num_envs': '512',
+ 'observation': 'raw',
+ 'size': '11',
+ 'total_steps': '250000000.0',
+ 'update_steps': '40'}
+ConvAgent(
+  (initial_conv_blocks): Sequential(
+    (0): ConvBlock(
+      (conv): CoordConv2D(
+        (addcoords): AddCoords()
+        (conv): Conv2d(5, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): ConvBlock(
+      (conv): CoordConv2D(
+        (addcoords): AddCoords()
+        (conv): Conv2d(34, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+  )
+  (residual_conv_blocks): Sequential(
+    (0): ConvBlock(
+      (conv): CoordConv2D(
+        (addcoords): AddCoords()
+        (conv): Conv2d(34, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): ConvBlock(
+      (conv): CoordConv2D(
+        (addcoords): AddCoords()
+        (conv): Conv2d(34, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+  )
+  (feedforward): Sequential(
+    (0): Sequential(
+      (0): Linear(in_features=32, out_features=64, bias=True)
+      (1): ReLU()
+    )
+  )
+  (value_head): Linear(in_features=64, out_features=1, bias=True)
+  (policy_head): Linear(in_features=64, out_features=4, bias=True)
+)
+[00:00:22]	Steps 0.00e6	Reward rate: 3.046e+01	Entropy: 1.046e-01	Edge Collision: 0.000e+00	Avg. size: 13.865	Self Collision: 0.000e+00	
+[00:00:34]	Steps 0.00e6	Reward rate: 1.789e+01	Entropy: 9.102e-02	Edge Collision: 0.000e+00	Avg. size: 25.316	Self Collision: 0.000e+00	
+[00:00:47]	Steps 0.00e6	Reward rate: 3.470e+01	Entropy: 4.242e-02	Edge Collision: 0.000e+00	Avg. size: 15.653	Self Collision: 8.632e-03	
+[00:01:00]	Steps 0.00e6	Reward rate: 2.810e+01	Entropy: 3.010e-02	Edge Collision: 0.000e+00	Avg. size: 9.300	Self Collision: 1.072e-02	
+[00:01:13]	Steps 0.00e6	Reward rate: 2.655e+01	Entropy: 5.426e-02	Edge Collision: 0.000e+00	Avg. size: 16.246	Self Collision: 8.310e-04	
+[00:01:26]	Steps 0.00e6	Reward rate: 2.481e+01	Entropy: 6.618e-02	Edge Collision: 0.000e+00	Avg. size: 17.395	Self Collision: 1.591e-02	
+[00:01:38]	Steps 0.00e6	Reward rate: 2.252e+01	Entropy: 6.766e-02	Edge Collision: 0.000e+00	Avg. size: 15.688	Self Collision: 1.234e-03	
+[00:01:51]	Steps 0.00e6	Reward rate: 2.579e+01	Entropy: 1.021e-01	Edge Collision: 7.416e-03	Avg. size: 10.381	Self Collision: 9.566e-05	
+[00:02:04]	Steps 0.00e6	Reward rate: 3.415e+01	Entropy: 6.977e-02	Edge Collision: 4.933e-03	Avg. size: 10.611	Self Collision: 7.416e-06	
+(onelastrty) tpb@panther:~/Desktop/FILA/project/wurm-medium-article-1$ 

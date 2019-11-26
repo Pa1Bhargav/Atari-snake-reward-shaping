@@ -1,0 +1,62 @@
+(onelastrty) tpb@panther:~/Desktop/FILA/project/wurm-medium-article-1$ python -m experiments.main --agent env=snake__num_envs=512__size=11__agent=convolutional__observation=raw__coord_conv=True__lr=0.0005__gamma=0.99__update_steps=40__entropy=0.01__total_steps=250000000.0.pt --env snake --num-envs 1 --size 11 --total-episodes 5 --save-model False --save-logs False  --render True --train False --save-location pathOptimResults --save-video True
+env=snake__num_envs=1__size=11__agent=env=snake__num_envs=512__size=11__agent=convolutional__observation=raw__coord_conv=True__lr=0.0005__gamma=0.99__update_steps=40__entropy=0.01__total_steps=250000000.0.pt__observation=default__coord_conv=True__lr=0.001__gamma=0.99__update_steps=20__entropy=0.0__total_episodes=5.0
+Loading agent from file. Agent params:
+{'agent': 'convolutional',
+ 'coord_conv': 'True',
+ 'entropy': '0.01',
+ 'env': 'snake',
+ 'gamma': '0.99',
+ 'lr': '0.0005',
+ 'num_envs': '512',
+ 'observation': 'raw',
+ 'size': '11',
+ 'total_steps': '250000000.0',
+ 'update_steps': '40'}
+ConvAgent(
+  (initial_conv_blocks): Sequential(
+    (0): ConvBlock(
+      (conv): CoordConv2D(
+        (addcoords): AddCoords()
+        (conv): Conv2d(5, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): ConvBlock(
+      (conv): CoordConv2D(
+        (addcoords): AddCoords()
+        (conv): Conv2d(34, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+  )
+  (residual_conv_blocks): Sequential(
+    (0): ConvBlock(
+      (conv): CoordConv2D(
+        (addcoords): AddCoords()
+        (conv): Conv2d(34, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+    (1): ConvBlock(
+      (conv): CoordConv2D(
+        (addcoords): AddCoords()
+        (conv): Conv2d(34, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+      )
+    )
+  )
+  (feedforward): Sequential(
+    (0): Sequential(
+      (0): Linear(in_features=32, out_features=64, bias=True)
+      (1): ReLU()
+    )
+  )
+  (value_head): Linear(in_features=64, out_features=1, bias=True)
+  (policy_head): Linear(in_features=64, out_features=4, bias=True)
+)
+[00:00:13]	Steps 0.00e6	Reward rate: 1.917e+01	Entropy: 6.245e-02	Edge Collision: 2.314e-03	Avg. size: 9.279	Self Collision: 0.000e+00	
+[00:00:26]	Steps 0.00e6	Reward rate: 2.293e+01	Entropy: 5.899e-02	Edge Collision: 1.794e-04	Avg. size: 20.521	Self Collision: 0.000e+00	
+[00:00:39]	Steps 0.00e6	Reward rate: 1.087e+01	Entropy: 1.170e-01	Edge Collision: 1.391e-05	Avg. size: 29.873	Self Collision: 0.000e+00	
+[00:00:52]	Steps 0.00e6	Reward rate: 2.762e+01	Entropy: 6.431e-02	Edge Collision: 1.078e-06	Avg. size: 14.524	Self Collision: 7.606e-03	
+[00:01:05]	Steps 0.00e6	Reward rate: 1.347e+01	Entropy: 7.016e-02	Edge Collision: 8.361e-08	Avg. size: 10.852	Self Collision: 1.769e-02	
+[00:01:19]	Steps 0.00e6	Reward rate: 3.304e+01	Entropy: 3.169e-02	Edge Collision: 1.545e-02	Avg. size: 8.476	Self Collision: 1.372e-03	
+[00:01:31]	Steps 0.00e6	Reward rate: 2.808e+01	Entropy: 5.559e-02	Edge Collision: 1.198e-03	Avg. size: 14.201	Self Collision: 1.063e-04	
+[00:01:45]	Steps 0.00e6	Reward rate: 2.071e+01	Entropy: 8.887e-02	Edge Collision: 9.289e-05	Avg. size: 13.346	Self Collision: 1.295e-02	
+[00:01:58]	Steps 0.00e6	Reward rate: 1.467e+01	Entropy: 1.048e-01	Edge Collision: 7.202e-06	Avg. size: 13.007	Self Collision: 1.004e-03	
+[00:02:11]	Steps 0.00e6	Reward rate: 2.116e+01	Entropy: 5.841e-02	Edge Collision: 5.583e-07	Avg. size: 21.933	Self Collision: 7.785e-05	
